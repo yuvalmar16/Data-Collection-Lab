@@ -10,7 +10,7 @@
     Technion - Israel Institute of Technology
 <br/> 
 <br>
-    <a href="https://youtu.be/Wn_zD-uUX1E">Users journey Video</a> |
+    <a href="https://youtu.be/Wn_zD-uUX1E">Users journey Video</a> |<a href="[https://youtu.be/Wn_zD-uUX1E](https://www.youtube.com/watch?v=Trc2p41LRhM)">Technical Overview Video</a>
     
 
 </p>
