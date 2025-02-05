@@ -8,6 +8,7 @@
     <a href="https://github.com/danielmaor0808">Daniel Maor</a>
     <br/> 
     Technion - Israel Institute of Technology
+    <br/> Data and Decision Science Faculty 
 </p>
 
 <p align='center'>
@@ -106,7 +107,7 @@ input_dim = 28
 
 ## Running The App
 
-The **[LinkedIn Image Evaluator App](https://github.com/yuvalmar16/Data-Collection-Lab/blob/main/Linkedin_image_evaluator_App.ipynb)** allows real-time evaluation of LinkedIn profile pictures. 
+The **[LinkedIn Image Evaluator App](https://github.com/yuvalmar16/Data-Collection-Lab/blob/main/Linkedin_image_evaluator_App.ipynb)** allows real-time evaluation of LinkedIn profile pictures. You can run the evaluation using urls as input, or Alternatively add your own ngrok Authentication in the marked place to run the site.
 
 ### **App Features:**
 - Users can **input image URLs** or **upload images** for scoring.
