@@ -80,7 +80,7 @@ The image analysis pipeline was executed on **Azure Databricks**, using a notebo
 
 ## Running the Train and Test Code
 
-The **[Train and Test Notebook](https://github.com/yuvalmar16/Data-Collection-Lab/blob/main/Train%20and%20test%20(1).ipynb)** loads the extracted dataset (`Profile_pictures_extracted.csv`) and performs:
+The **[Train and Test Notebook](https://github.com/yuvalmar16/Data-Collection-Lab/blob/main/Train%20and%20test%20(1)%20(1).ipynb)** loads the extracted dataset (`Profile_pictures_extracted.csv`) and performs:
 
 - **Exploratory Data Analysis (EDA)**: Correlation matrix to identify key feature relationships.
 - **Model Training**: A machine learning model predicts LinkedIn scores from extracted image attributes.
