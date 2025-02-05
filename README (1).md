@@ -62,7 +62,8 @@ The goal? Helping users make data-driven choices about their professional presen
 
 📷 OpenCV – Image preprocessing
 
-
+# Scraping Images
+he scraping notebook executes web scraping using the Google Search API (SerpAPI) to extract profile images from corporate websites and automates retrieving image URLs by searching for professional profile pictures from company "Our Team" pages.
 
 
 # PreProccess images
