@@ -26,11 +26,13 @@
 
 # Contents
 - [Overview](#Overview)
-- [Transforming Pictures](#Transforming-Pictures)
+- [Scraping pictures](#Scraping-pictures)
+- [PreProccess images](#PreProccess-images)
 
-- [Running the code](#Running-the-code)
-    - - [Download linkedin_score_predictor weights](#Download-linkedin_score_predictor-weights)
-    - [Running The App](#Runing-the-Image-evaluator-App)
+- [Running the code]
+        - [Running the Train and Test code](#Running-the-Train-and-Test-code)
+        - [Download linkedin_score_predictor weights](#Download-linkedin_score_predictor-weights)
+        - [Running The App](#Runing-the-Image-evaluator-App)
 
   
 # Overview
@@ -63,8 +65,7 @@ The goal? Helping users make data-driven choices about their professional presen
 
 
 
-# Transforming Pictures
-
+# PreProccess images
 The image analysis pipeline was executed on Azure Databricks Notebook Which is named "PreProcess images and features", with data stored in dbfs/FileStore. The process began with unzipping multiple image archives and consolidating all images into a single directory (/dbfs/FileStore/all_images_combined). To ensure no duplicates, a renaming strategy was implemented for files with identical names.The name of the csv in the notebook which was saved in the dbfs is Data_NotNorm__1_.
 In this folder, the images we collected were labeled with a score ranging from 1 to 100, and approximately 30 features were extracted using CLIP.The csv in this github folder is named Profile_Pictures_extracted.csv
  The feature extraction process involved multiple techniques to assess different aspects of the images. CLIP was used to analyze the similarity between images and predefined textual descriptions, evaluating attributes such as smile, professional attire, clean background, serious expression, confidence, and trustworthiness. Additionally, MediaPipe was utilized to detect facial landmarks and body proportions, determining the percentage of the image occupied by the face and upper body, as well as assessing horizontal and vertical face centering. Nose and eye alignment were analyzed using Dlib and MediaPipe to ensure proper positioning and direct eye contact with the camera. Head tilt was calculated based on the angle between the eyes, while the looking direction score measured the alignment of the nose tip with the eye center to estimate whether the subject was looking straight at the camera. Image quality metrics, including resolution (DPI score) and lighting quality, were also assessed to ensure clarity and brightness. The extracted features were then compiled into a final scoring system, combining CLIP-based similarity scores with numerical attributes, providing a comprehensive evaluation of each image.
@@ -73,15 +74,15 @@ In this folder, the images we collected were labeled with a score ranging from 1
 
 
 
-# Running the code
+# Running the Train and Test code
 
-The [Train and test (1).ipynb](https://github.com/yuvalmar16/Data-Collection-Lab/blob/main/Train%20and%20test%20(1).ipynb) loads the CSV dataset generated from the image analysis pipeline and performs data analysis, model training, and evaluation. It begins by loading the extracted features and LinkedIn scores into a Pandas DataFrame, followed by exploratory data analysis, including a correlation matrix to identify key feature relationships. The dataset is then split into training and testing sets, and a machine learning model is trained to predict LinkedIn scores based on image attributes. The model's performance is assessed using metrics such as Mean Squared Error (MSE) and R², while feature importance analysis reveals the most influential factors. This notebook serves as the final step in the pipeline, transforming raw image data into actionable insights and a predictive model for professional profile picture evaluation
+The [Train and test (1).ipynb](https://github.com/yuvalmar16/Data-Collection-Lab/blob/main/Train%20and%20test%20(1).ipynb) loads the CSV dataset generated from the image analysis pipeline( in this dir named "Profile_pictures_extracted.csv) and performs data analysis, model training, and evaluation. It begins by loading the extracted features and LinkedIn scores into a Pandas DataFrame, followed by exploratory data analysis, including a correlation matrix to identify key feature relationships. The dataset is then split into training and testing sets, and a machine learning model is trained to predict LinkedIn scores based on image attributes. The model's performance is assessed using metrics such as Mean Squared Error (MSE) and R², while feature importance analysis reveals the most influential factors. This notebook serves as the final step in the pipeline, transforming raw image data into actionable insights and a predictive model for professional profile picture evaluation
 
 
 
 # Download linkedin_score_predictor weights
 
-You can download the model checkpoints from the [linkedin_score_predictor](https://github.com/yuvalmar16/Data-Collection-Lab/blob/main/linkedin_score_predictor.pth) and save them to the "models" folder in the dbfs.
+You can download the model checkpoints from the [linkedin_score_predictor](https://github.com/yuvalmar16/Data-Collection-Lab/blob/main/linkedin_score_predictor.pth) and save them to the "models" folder in the dbfs and load it to your notebook, notice that you need to define the input_dim=28.(This code section which load the weights is already in the train and test notebook and also in the app notebook.
 
 
 # Running The App
