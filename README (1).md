@@ -4,7 +4,7 @@
 
 <p align='center'>
     <a href="https://github.com/yuvalmar16">Yuval Margolin</a> | 
-    <a href="#">Ravid Gersh</a> | 
+    <a href="https://github.com/RavidGersh59">Ravid Gersh</a> | 
     <a href="https://github.com/danielmaor0808">Daniel Maor</a>
     <br/> 
     Technion - Israel Institute of Technology
